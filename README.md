@@ -1,2 +1,2 @@
 # ALREADYHAS-Elysium
-A Web Application for soctors.
+A Web Application for doctors.
