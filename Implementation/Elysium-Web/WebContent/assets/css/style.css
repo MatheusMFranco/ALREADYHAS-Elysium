@@ -1,0 +1,33 @@
+/* All Templates */
+.center{
+	text-align: center;
+}
+.separator{
+	margin: 1em;
+}
+
+/* Unauthenticated Template */
+
+/* Text */
+.title__unauthenticated{
+	text-transform: uppercase;
+	text-align: center;
+}
+.link__unauthenticated{
+	text-decoration: none;
+}
+.link__unauthenticated:hover{
+	text-decoration: underline;
+}
+
+/* All Form */
+.link__unauthenticated,
+.button__unauthenticated,
+.input__unauthenticated{
+	opacity: 1;
+}
+.link__unauthenticated:hover,
+.button__unauthenticated:hover,
+.input__unauthenticated:focus{
+	opacity: 0.7;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/unauthenticated/theme.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="content">
+
+		<h1 class="title__unauthenticated">Welcome to Elysium!</h1>
+
+		<form action="login-controller.do" method="post" class="w3-container">
+
+			<div class="w3-container">
+				<label 	for="username" 
+						class="w3-label w3-text-white w3-text-shadow">
+						<b>User Name</b>
+				</label>
+
+				<input 	id="username" 
+						name="username" 
+						class="w3-input w3-border input__unauthenticated" 
+						type="text" title="Insert your user name" 
+						placeholder="Insert your user name" />
+		 	</div>
+
+			<div class="w3-container">
+				<label 	for="password" 
+						class="w3-label w3-text-white w3-text-shadow">
+						<b>Password</b>
+				</label>
+
+				<input 	id="password"
+						name="password"
+						class="w3-input w3-border input__unauthenticated" 
+						type="password" 
+						title="Insert your password" 
+						placeholder="Insert your password" />
+			</div>
+
+			<br />
+
+			<div class="w3-container w3-btn-group ui-widget ui-corner-all">
+				<button id="bnt-login" 
+						class="w3-btn w3-blue w3-btn-block button__unauthenticated" 
+						type="submit" 
+						title="Click for login" 
+						value="login">
+						<i class="w3-xlarge fa fa-arrow-circle-right"></i>
+						Login
+				</button>
+				<button id="bnt-reset" 
+						class="w3-btn w3-white w3-btn-block button__unauthenticated" 
+						type="reset" 
+						title="Click for reset inputs" 
+						value="reset">
+						<i class="w3-xlarge fa fa-circle-thin"></i>
+						Reset
+				</button>
+			</div>
+
+			<br />
+
+			<div class="w3-container center">
+				<a 	href="register.xhtml"
+					class="link__unauthenticated">
+					<strong>Register Now!</strong>
+				</a>
+				<b class="separator">|</b>
+				<a 	href="forgot-password.xhtml"
+					class="link__unauthenticated">
+					I forgot the password...
+				</a>
+			</div>
+		</form>
+	</ui:define>
+</ui:composition>
