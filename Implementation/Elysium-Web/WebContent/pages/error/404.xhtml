@@ -5,6 +5,20 @@
 
 
 	<ui:define name="content">
-		<h1>404</h1>
+		<div class="w3-panel w3-white w3-round-xlarge center panel__opacity--50">
+			<h1 class="title__error">404</h1>
+			<h2>Page Not Found</h2>
+			<p>The page you tried to access does not exist or ceased to exist ... '-'</p>
+			<div class="w3-container w3-btn-group ui-widget ui-corner-all">
+				<button id="bnt-return" 
+						class="w3-btn w3-white w3-btn-block button__unauthenticated" 
+						type="button" 
+						title="Click to return to the previous page." 
+						value="return">
+						<i class="w3-xlarge fa fa-arrow-circle-left"></i>
+						Return
+				</button>
+			</div>
+		</div>
 	</ui:define>
 </ui:composition>

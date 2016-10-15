@@ -5,6 +5,9 @@
 .separator{
 	margin: 1em;
 }
+.panel__opacity--50{
+	opacity: 0.5;
+}
 
 /* Unauthenticated Template */
 
@@ -12,6 +15,10 @@
 .title__unauthenticated{
 	text-transform: uppercase;
 	text-align: center;
+}
+.title__error{
+	font-size: 10em;
+	font-weight: bold;
 }
 .link__unauthenticated{
 	text-decoration: none;
