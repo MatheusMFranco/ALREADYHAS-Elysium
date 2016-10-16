@@ -4,6 +4,7 @@ var selection = navigator.language;
 var english = {	"slogan"				:	"A software for doctors.",
 				"title_welcome"	 		: 	"Welcome to Elysium!",
 				"title_404_error"		:	"Page Not Found",
+				"title_500_error"		:	"Internal Server Error",
 				"username" 				: 	"User Name",
 				"password" 				: 	"Password", 
 				"bnt_login"				:	"Login",
@@ -18,12 +19,14 @@ var english = {	"slogan"				:	"A software for doctors.",
 				"hint_bnt_back"			:	"Click to return to the previous page",
 				"hint_link_register"	:	"Click to a new account",
 				"hint_link_forgot_psw" 	: 	"Click to renew your password",
-				"message_404_error"		:	"The page you tried to access does not exist or ceased to exist ... '_'"
+				"message_404_error"		:	"The page you tried to access does not exist or ceased to exist ... '_'",
+				"message_500_error"		:	"Did something happen on the server... =/"
 				};
 
 var portugues ={"slogan"				:	"Um software para médicos.",
 				"title_welcome"	 		: 	"Bem-vindo ao Elysium!",
 				"title_404_error"		:	"Página Não Encontrada",
+				"title_500_error"		:	"Erro Interno no Servidor",
 				"username" 				: 	"Usuário",
 				"password" 				: 	"Senha", 
 				"bnt_login"				:	"Logar",
@@ -38,7 +41,8 @@ var portugues ={"slogan"				:	"Um software para médicos.",
 				"hint_bnt_back"			:	"Clique aqui para retornar a página anterior",
 				"hint_link_register"	:	"Clique aqui para uma nova conta",
 				"hint_link_forgot_psw" 	: 	"Clique aqui para renovar a sua senha",
-				"message_404_error"		:	"A página que você está tentando acessar não existe ou parou de existir... '_'"
+				"message_404_error"		:	"A página que você está tentando acessar não existe ou parou de existir... '_'",
+				"message_500_error"		:	"Aconceteu alguma coisa no servidor... =/"
 				};
 
 getDefaultLanguage();
@@ -75,7 +79,8 @@ function changeLanguage(form){
 function setTextLanguageInPages(){
 	$("#slogan")				.text(text.slogan);
 	$("#title-welcome")			.text(text.title_welcome);	 		
-	$("#title-404-error")		.text(text.title_404_error);		
+	$("#title-404-error")		.text(text.title_404_error);
+	$("#title-500-error")		.text(text.title_500_error);
 	$("#title_username")		.text(text.username); 				
 	$("#title_password")		.text(text.password); 				
 	$("#bnt-login")				.text(text.bnt_login);				
@@ -83,7 +88,8 @@ function setTextLanguageInPages(){
 	$("#bnt-back")				.text(text.bnt_back);			
 	$("#link-register")			.text(text.link_register);			
 	$("#link-forgot-password")	.text(text.link_forgot_password);
-	$("#message-404-error")		.text(text.message_404_error); 	
+	$("#message-404-error")		.text(text.message_404_error);
+	$("#message-500-error")		.text(text.message_500_error);
 	//Hint
 	$("#username")				.attr("title", text.hint_username);			
 	$("#password")				.attr("title", text.hint_password);

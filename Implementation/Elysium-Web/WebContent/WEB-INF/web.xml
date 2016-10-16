@@ -46,7 +46,7 @@
 	<error-page>
 		<!-- Uncaught exception -->
 		<error-code>500</error-code>
-		<location>/pages/error/404.xhtml</location>
+		<location>/pages/error/500.xhtml</location>
 	</error-page>
 
 	<error-page>
