@@ -2,11 +2,14 @@
 .center{
 	text-align: center;
 }
-.separator{
-	margin: 1em;
+.dropdown{
+	cursor: pointer;	
 }
 .panel__opacity--50{
 	opacity: 0.5;
+}
+.separator{
+	margin: 1em;
 }
 
 /* Unauthenticated Template */

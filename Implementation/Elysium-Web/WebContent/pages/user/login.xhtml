@@ -6,14 +6,17 @@
 
 	<ui:define name="content">
 
-		<h1 class="title__unauthenticated">Welcome to Elysium!</h1>
+		<h1 id="title-welcome" 
+			class="title__unauthenticated">
+			Welcome to Elysium!
+		</h1>
 
 		<form action="login-controller.do" method="post" class="w3-container">
 
 			<div class="w3-container">
 				<label 	for="username" 
 						class="w3-label w3-text-white w3-text-shadow">
-						<b>User Name</b>
+						<b id="title_username">User Name</b>
 				</label>
 
 				<input 	id="username" 
@@ -26,7 +29,7 @@
 			<div class="w3-container">
 				<label 	for="password" 
 						class="w3-label w3-text-white w3-text-shadow">
-						<b>Password</b>
+						<b id="title_password">Password</b>
 				</label>
 
 				<input 	id="password"
@@ -61,13 +64,17 @@
 			<br />
 
 			<div class="w3-container center">
-				<a 	href="register.xhtml"
-					class="link__unauthenticated">
+				<a 	id="link-register"
+					href="register.xhtml"
+					class="link__unauthenticated"
+					title="Click for a new account">
 					<strong>Register Now!</strong>
 				</a>
 				<b class="separator">|</b>
-				<a 	href="forgot-password.xhtml"
-					class="link__unauthenticated">
+				<a 	id="link-forgot-password"
+					href="forgot-password.xhtml"
+					class="link__unauthenticated"
+					title="Click to renew your password">
 					I forgot the password...
 				</a>
 			</div>
