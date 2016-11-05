@@ -25,12 +25,12 @@ public class TypeEmployeeDAO extends TypeModelDAO {
 
 	@Override
 	public String getTable() {
-		return Table.TYPE_EMPLOYEE.title;
+		return Table.TYPE_EMPLOYEE.getTitle();
 	}
 
 	@Override
 	public List<String> modelValues() {
-		List<String> listModelValues = new ArrayList<String>();
+		List<String> listModelValues = new ArrayList<>();
 
 		listModelValues.add(TypeEmployeeTable.DATE_REGISTER.toString());
 		listModelValues.add(TypeEmployeeTable.NAME_TYPE.toString());
@@ -40,7 +40,7 @@ public class TypeEmployeeDAO extends TypeModelDAO {
 
 	@Override
 	public List<IElysiumModel> createList(Statement statement, ResultSet resultSet) {
-		List<IElysiumModel> listTypeModel = new ArrayList<IElysiumModel>();
+		List<IElysiumModel> listTypeModel = new ArrayList<>();
 
 		try {
 

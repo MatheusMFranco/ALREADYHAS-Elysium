@@ -2,6 +2,8 @@ package br.com.alreadyhas.elysium.abstraction;
 
 import java.util.List;
 
+import br.com.alreadyhas.elysium.persistence.SQLReservedWord;
+
 public interface IStringSQL {
 
 	String selectAll();
@@ -33,4 +35,7 @@ public interface IStringSQL {
 	 */
 	String buildList(String sql, List<String> columns, String separator, String end, char type);
 
+	String buildList(String sql, List<String> columns, String separator, String end, String type);
+
+	String buildList(String sql, List<String> columns, SQLReservedWord separator, SQLReservedWord end, SQLReservedWord type);
 }

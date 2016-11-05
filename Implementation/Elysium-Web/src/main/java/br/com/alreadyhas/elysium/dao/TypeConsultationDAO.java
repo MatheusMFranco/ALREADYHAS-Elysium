@@ -25,7 +25,7 @@ public class TypeConsultationDAO extends TypeModelDAO {
 
 	@Override
 	public String getTable() {
-		return Table.TYPE_CONSULTATION.title;
+		return Table.TYPE_CONSULTATION.getTitle();
 	}
 
 	@Override
