@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/unauthenticated/theme.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<ui:define name="content">
+		<div class="w3-panel w3-white w3-round-xlarge center panel__opacity--50">
+			<h1 class="title__error">403</h1>
+			<h2 id="title-403-error">Forbidden</h2>
+			<p id="message-403-error">WHAT?!
+			 	You are trying to access a page that was not? 
+			 	Ask permission to the support team or your supervisor to have access to this page.
+			</p>
+			<div class="w3-container w3-btn-group ui-widget ui-corner-all">
+				<button id="bnt-back" 
+						class="w3-btn w3-white w3-btn-block button__unauthenticated" 
+						type="button" 
+						title="Click to return to the previous page" 
+						value="return">
+						<i class="w3-xlarge fa fa-arrow-circle-left"></i>
+						Return
+				</button>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

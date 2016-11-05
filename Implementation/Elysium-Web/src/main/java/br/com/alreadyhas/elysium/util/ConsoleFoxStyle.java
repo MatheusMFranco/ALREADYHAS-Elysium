@@ -30,7 +30,7 @@ public class ConsoleFoxStyle implements IConsole {
 	 * @return String
 	 */
 	private String getContainer() {
-		List<String> container = new ArrayList<String>();
+		List<String> container = new ArrayList<>();
 
 		for (int i = 0; i <= CONTAINER_AMOUNT; i++) {
 			container.add(CONTAINER_CHARACTER);
@@ -46,7 +46,7 @@ public class ConsoleFoxStyle implements IConsole {
 	 * @return String
 	 */
 	private String getSpace(int times) {
-		List<String> spaces = new ArrayList<String>();
+		List<String> spaces = new ArrayList<>();
 
 		for (int i = 0; i <= SPACE_AMOUNT * times; i++) {
 			spaces.add(SPACE_CHARACTER);
@@ -85,12 +85,14 @@ public class ConsoleFoxStyle implements IConsole {
 
 	@Override
 	public void credits() {
+		final String BEGIN_PHRASE = "* ";
+		final String END_PHRASE = ":";
 		breakLine();
 		line();
 
 		String wordKey, wordValue;
 		for (int i = 0; i < Info.values().length; i++) {
-			wordKey = "* " + Info.values()[i] + ":";
+			wordKey = BEGIN_PHRASE + Info.values()[i] + END_PHRASE;
 
 			if (i < 2)
 				wordKey += " ";

@@ -26,16 +26,6 @@
 	</context-param>
 
 	<error-page>
-		<error-code>400</error-code>
-		<location>/pages/error/400.xhtml</location>
-	</error-page>
-
-	<error-page>
-		<error-code>401</error-code>
-		<location>/pages/error/401.xhtml</location>
-	</error-page>
-
-	<error-page>
 		<error-code>403</error-code>
 		<location>/pages/error/403.xhtml</location>
 	</error-page>
@@ -48,11 +38,6 @@
 	<error-page>
 		<error-code>500</error-code>
 		<location>/pages/error/500.xhtml</location>
-	</error-page>
-
-	<error-page>
-		<error-code>503</error-code>
-		<location>/pages/error/503.xhtml</location>
 	</error-page>
 
 </web-app>
