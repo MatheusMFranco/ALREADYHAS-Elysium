@@ -9,13 +9,14 @@ import java.sql.Statement;
 
 import org.junit.Test;
 
-import br.com.odontoelysium.model.TypeConsultation;
-import br.com.odontoelysium.persistence.ConnectionDB;
-import br.com.odontoelysium.persistence.ReadyQuery;
-import br.com.odontoelysium.persistence.Table;
-import br.com.odontoelysium.table.TypeConsultationTable;
-import br.com.odontoelysium.util.ConsoleFoxStyle;
-import br.com.odontoelysium.util.ConsoleMessage;
+import br.com.alreadyhas.elysium.dao.TypeConsultationDAO;
+import br.com.alreadyhas.elysium.model.TypeConsultation;
+import br.com.alreadyhas.elysium.persistence.ConnectionDB;
+import br.com.alreadyhas.elysium.persistence.ReadyQuery;
+import br.com.alreadyhas.elysium.persistence.Table;
+import br.com.alreadyhas.elysium.table.TypeConsultationTable;
+import br.com.alreadyhas.elysium.util.ConsoleFoxStyle;
+import br.com.alreadyhas.elysium.util.ConsoleMessage;
 
 public class TypeConsultationDAOTest {
 

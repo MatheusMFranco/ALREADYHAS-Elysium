@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>ELYSIUM</title>
+
+		<link rel="shortcut icon" type="image/x-icon"
+			href="#{request.contextPath}/assets/img/ico/favicon.ico" />
+
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/assets/css/w3.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/assets/css/correct-template-unauthenticated.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/util/jquery-ui/jquery-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/util/jquery-ui/jquery-ui.theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/util/jquery-ui/jquery-ui.structure.min.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/util/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/assets/css/correct-components.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="#{request.contextPath}/assets/css/color.css" />
+	</head>
+
+	<body>
+		<noscript>
+			<h1>
+				Active your javascript! <a href="#">Click here, to tutorial</a>.
+			</h1>
+		</noscript>
+
+		<div class="bgimg-1 w3-display-container w3-animate-opacity w3-text-white">
+			<header>
+				<div class="w3-display-topleft w3-padding-large w3-xlarge">
+    				ELYSIUM
+ 				</div>
+
+ 				<div class="w3-display-topright">	
+					<select 
+						id="change-language" 
+						class="dropdown">
+				  		<option id="en">English</option>
+				  		<option id="pt-BR">Português</option>
+					</select>
+				</div>
+			</header>
+
+			<div class="w3-display-middle">
+
+		    	<ui:insert name="content" />
+
+		  	</div>
+
+			<footer>
+				<div class="w3-display-bottomleft w3-padding-large">
+    			 	<b>ELYSIUM - </b> <i id="slogan">A software for doctors.</i><br />
+  				</div>
+			</footer>
+		</div>
+
+		<script type="text/javascript" src="#{request.contextPath}/util/js/jquery.min.js" />
+		<script type="text/javascript" src="#{request.contextPath}/util/jquery-ui/jquery-ui.min.js" />
+		<script type="text/javascript" src="#{request.contextPath}/assets/js/w3.js" />
+		<script type="text/javascript" src="#{request.contextPath}/assets/js/component.js" />
+		<script type="text/javascript" src="#{request.contextPath}/assets/js/alreadyhas.js" />
+		<script type="text/javascript" src="#{request.contextPath}/assets/js/main.js" />
+	</body>
+</html>

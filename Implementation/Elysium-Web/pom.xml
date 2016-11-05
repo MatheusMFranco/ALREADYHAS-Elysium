@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.alreadyhas</groupId>
+	<artifactId>Elysium</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<developers>
+		<developer>
+			<id>MatheusMFranco</id>
+			<name>Matheus M. Franco</name>
+			<email>francomathmagal@gmail.com</email>
+			<url>https://github.com/MatheusMFranco</url>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>Brazil/Brazilian</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<java.version>1.7</java.version>
+	</properties>
+
+	<build>
+
+		<finalName>Elysium</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.1.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

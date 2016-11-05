@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import br.com.alreadyhas.elysium.persistence.ConnectionDB;
+
 public class ConnectionDBTest {
 
 	public static void main(String[] args) {
