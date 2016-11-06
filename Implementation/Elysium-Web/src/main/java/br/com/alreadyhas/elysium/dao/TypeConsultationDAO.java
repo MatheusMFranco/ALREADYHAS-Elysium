@@ -30,7 +30,7 @@ public class TypeConsultationDAO extends TypeModelDAO {
 
 	@Override
 	public List<String> modelValues() {
-		List<String> listModelValues = new ArrayList<String>();
+		List<String> listModelValues = new ArrayList<>();
 
 		listModelValues.add(TypeConsultationTable.DATE_REGISTER.toString());
 		listModelValues.add(TypeConsultationTable.NAME_TYPE.toString());
@@ -40,7 +40,7 @@ public class TypeConsultationDAO extends TypeModelDAO {
 
 	@Override
 	public List<IElysiumModel> createList(Statement statement, ResultSet resultSet) {
-		List<IElysiumModel> listTypeModel = new ArrayList<IElysiumModel>();
+		List<IElysiumModel> listTypeModel = new ArrayList<>();
 
 		try {
 

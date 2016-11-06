@@ -1,19 +1,13 @@
 package br.com.alreadyhas.elysium.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import br.com.alreadyhas.elysium.abstraction.IElysiumModel;
-
-public class Medicament implements IElysiumModel {
-	private Long id;
+public class Medicament extends ElysiumModelAbstract {
 	private Consultation consultation;
 	private Integer amount;
 	private Integer intervalDays;
 	private String leaflet;
-	private String name;
 	private String reason;
-	private Date dateRegister;
 	private Date intervalHours;
 
 	public Medicament() {
@@ -21,7 +15,6 @@ public class Medicament implements IElysiumModel {
 
 	public Medicament(Consultation consultation, Integer amount, Integer intervalDays, String leaflet, String name, String reason, Date dateRegister,
 			Date intervalHours) {
-		super();
 		this.consultation = consultation;
 		this.amount = amount;
 		this.intervalDays = intervalDays;
@@ -30,16 +23,6 @@ public class Medicament implements IElysiumModel {
 		this.reason = reason;
 		this.dateRegister = dateRegister;
 		this.intervalHours = intervalHours;
-	}
-
-	@Override
-	public Long getId() {
-		return id;
-	}
-
-	@Override
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Consultation getConsultation() {
@@ -74,16 +57,6 @@ public class Medicament implements IElysiumModel {
 		this.leaflet = leaflet;
 	}
 
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getReason() {
 		return reason;
 	}
@@ -92,32 +65,11 @@ public class Medicament implements IElysiumModel {
 		this.reason = reason;
 	}
 
-	@Override
-	public Date getDateRegister() {
-		return dateRegister;
-	}
-
-	@Override
-	public void setDateRegister(Date dateRegister) {
-		this.dateRegister = dateRegister;
-	}
-
 	public Date getIntervalHours() {
 		return intervalHours;
 	}
 
 	public void setIntervalHours(Date intervalHours) {
 		this.intervalHours = intervalHours;
-	}
-
-	@Override
-	public String brDateRegister() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		return dateFormat.format(dateRegister);
-	}
-
-	@Override
-	public String toString() {
-		return "| " + id + " | " + brDateRegister() + " | " + name;
 	}
 }

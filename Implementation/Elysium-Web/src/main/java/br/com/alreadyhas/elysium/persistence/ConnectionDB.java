@@ -6,25 +6,32 @@ import java.sql.SQLException;
 
 import br.com.alreadyhas.elysium.message.DataMessage;
 import br.com.alreadyhas.elysium.message.ErrorMessage;
+import br.com.alreadyhas.elysium.start.DataAccess;
 import br.com.alreadyhas.elysium.util.ElysiumObject;
 
 public class ConnectionDB extends ElysiumObject {
 
-	private static final String USER = "postgres";
-	private static final String PASSWORD = "valhala";
 	private static final String DATABASE = "jdbc:postgresql://localhost:5432/elysiumBD";
 	private static final String DRIVER = "org.postgresql.Driver";
 
 	public static Connection getConnection() {
 
+		DataAccess access = DataAccess.getInstance();
+
+		String user = access.getUser();
+		String password = access.getPassword();
+
 		try {
 			DataMessage.informationConnecting();
+
 			Class.forName(DRIVER);
-			Connection con = DriverManager.getConnection(DATABASE, USER, PASSWORD);
+			Connection connection = DriverManager.getConnection(DATABASE, user, password);
+
 			DataMessage.successPerformedConnection();
 			DataMessage.informationExecutedInDate();
 
-			return con;
+			return connection;
+
 		} catch (SQLException e) {
 			ErrorMessage.errorConnecting(e, new ConnectionDB(), "getConnection() : Connection");
 			return null;

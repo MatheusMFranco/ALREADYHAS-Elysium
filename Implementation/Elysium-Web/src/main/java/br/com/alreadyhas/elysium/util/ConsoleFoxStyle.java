@@ -8,11 +8,11 @@ import br.com.alreadyhas.elysium.abstraction.IConsole;
 
 public class ConsoleFoxStyle implements IConsole {
 
-	private static final String USER_SEPARATOR = ">";
-	private String CONTAINER_CHARACTER = "=";
-	private String SPACE_CHARACTER = " ";
-	private int CONTAINER_AMOUNT = 70;
-	private int SPACE_AMOUNT = 10;
+	private final String USER_SEPARATOR = ">";
+	private final String CONTAINER_CHARACTER = "=";
+	private final String SPACE_CHARACTER = " ";
+	private final int CONTAINER_AMOUNT = 70;
+	private final int SPACE_AMOUNT = 10;
 
 	private String username;
 
@@ -97,7 +97,7 @@ public class ConsoleFoxStyle implements IConsole {
 			if (i < 2)
 				wordKey += " ";
 
-			wordValue = getSpace(1) + Info.values()[i].value;
+			wordValue = getSpace(1) + Info.values()[i].getValue();
 
 			System.out.println(wordKey + wordValue);
 		}

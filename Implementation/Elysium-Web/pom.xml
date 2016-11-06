@@ -22,6 +22,9 @@
 	<properties>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<java.version>1.7</java.version>
+		<sonar.version>3.1.1</sonar.version>
+		<compiler.version>3.3</compiler.version>
+		<postgres.version>9.3-1102.jdbc41</postgres.version>
 	</properties>
 
 	<build>
@@ -32,13 +35,13 @@
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.1.1</version>
+				<version>${sonar.version}</version>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>${compiler.version}</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -46,4 +49,10 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<dependencies>
+	</dependencies>
+	
+	<repositories>
+	</repositories>
 </project>

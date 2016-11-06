@@ -1,17 +1,12 @@
 package br.com.alreadyhas.elysium.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import br.com.alreadyhas.elysium.abstraction.IElysiumModel;
-
-public class Person implements IElysiumModel {
-	private Long id;
+public class Person extends ElysiumModelAbstract {
 	private Employee employee;
 	private Patient patient;
 	private Integer cpf;
 	private Integer identity;
-	private String name;
 	private String lastName;
 	private String maritalStatus;
 	private String naturalness;
@@ -22,7 +17,6 @@ public class Person implements IElysiumModel {
 	private String spouse;
 	private String userType;
 	private Date dateBirth;
-	private Date dateRegister;
 	private Date dateIssuerRG;
 	private Byte photo;
 	private char gender;
@@ -32,7 +26,6 @@ public class Person implements IElysiumModel {
 
 	public Person(Integer cpf, String name, String lastName, String maritalStatus, String naturalness, String occupation, String password,
 			String registration, String organInssuerRG, String userType, Date dateBirth, Date dateRegister, Date dateIssuerRG, char gender) {
-		super();
 		this.cpf = cpf;
 		this.name = name;
 		this.lastName = lastName;
@@ -44,24 +37,8 @@ public class Person implements IElysiumModel {
 		this.organInssuerRG = organInssuerRG;
 		this.userType = userType;
 		this.dateBirth = dateBirth;
-		this.dateRegister = dateRegister;
 		this.dateIssuerRG = dateIssuerRG;
 		this.gender = gender;
-	}
-
-	@Override
-	public String toString() {
-		return "The person \"" + name + "\" was generated with the registration \"" + registration + "\".";
-	}
-
-	@Override
-	public Long getId() {
-		return id;
-	}
-
-	@Override
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public Employee getEmployee() {
@@ -94,16 +71,6 @@ public class Person implements IElysiumModel {
 
 	public void setIdentity(Integer identity) {
 		this.identity = identity;
-	}
-
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getLastName() {
@@ -209,21 +176,4 @@ public class Person implements IElysiumModel {
 	public void setGender(char gender) {
 		this.gender = gender;
 	}
-
-	@Override
-	public Date getDateRegister() {
-		return dateRegister;
-	}
-
-	@Override
-	public void setDateRegister(Date dateRegister) {
-		this.dateRegister = dateRegister;
-	}
-
-	@Override
-	public String brDateRegister() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		return dateFormat.format(dateRegister);
-	}
-
 }

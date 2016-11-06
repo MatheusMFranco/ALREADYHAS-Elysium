@@ -10,7 +10,6 @@ import java.util.List;
 import br.com.alreadyhas.elysium.abstraction.IDAO;
 import br.com.alreadyhas.elysium.abstraction.IDataPresentation;
 import br.com.alreadyhas.elysium.abstraction.IElysiumModel;
-import br.com.alreadyhas.elysium.abstraction.IStringSQL;
 import br.com.alreadyhas.elysium.message.DataMessage;
 import br.com.alreadyhas.elysium.message.DataPresentationImpl;
 import br.com.alreadyhas.elysium.persistence.ActionForDAO;
@@ -19,25 +18,7 @@ import br.com.alreadyhas.elysium.util.ElysiumObject;
 
 public abstract class TypeModelDAO extends ElysiumObject implements IDAO {
 
-	public Connection CONNECTION = ConnectionDB.getConnection();
-
-	@Override
-	public abstract IStringSQL getQuery();
-
-	@Override
-	public abstract String getTable();
-
-	@Override
-	public abstract List<String> modelValues();
-
-	@Override
-	public abstract List<IElysiumModel> createList(Statement statement, ResultSet resultSet);
-
-	@Override
-	public abstract String deleteQuery();
-
-	@Override
-	public abstract String updateQuery();
+	protected Connection CONNECTION = ConnectionDB.getConnection();
 
 	@Override
 	public IDataPresentation getPresentation() {

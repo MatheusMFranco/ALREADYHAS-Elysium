@@ -42,6 +42,11 @@ public abstract class DataMessage extends ElysiumObject {
 		CONSOLE.info(ConsoleMessage.SUCCESS, "Successfully execution in " + table + END_PHRASE);
 	}
 
+	public static void inputMessage(String input) {
+		String END_PHRASE = ":";
+		CONSOLE.write("Enter your " + input + END_PHRASE);
+	}
+
 	private static String messageGivenInformed(String action) {
 		return action + " given informed...";
 	}

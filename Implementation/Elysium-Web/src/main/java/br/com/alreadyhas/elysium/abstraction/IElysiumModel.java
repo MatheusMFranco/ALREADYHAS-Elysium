@@ -3,6 +3,7 @@ package br.com.alreadyhas.elysium.abstraction;
 import java.util.Date;
 
 public interface IElysiumModel {
+
 	Long getId();
 
 	void setId(Long id);

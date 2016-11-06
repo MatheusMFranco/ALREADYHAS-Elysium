@@ -27,7 +27,7 @@ public class ReadyQuery implements IStringSQL {
 	public String selectAll() {
 		String orderBy = SQLReservedWord.SPACE.getReservedWord();
 
-		if (order.equalsIgnoreCase(SQLReservedWord.SPACE.getReservedWord())) {
+		if (!order.equalsIgnoreCase(SQLReservedWord.SPACE.getReservedWord())) {
 			orderBy = SQLReservedWord.ORDER_BY.getReservedWord() + order;
 		}
 
@@ -103,7 +103,7 @@ public class ReadyQuery implements IStringSQL {
 
 	@Override
 	public String buildList(String sql, List<String> columns, String separator, String end, char type) {
-		final String TYPE = type + "";
+		final String TYPE = Character.toString(type);
 
 		for (int i = 0; i < columns.size(); i++) {
 

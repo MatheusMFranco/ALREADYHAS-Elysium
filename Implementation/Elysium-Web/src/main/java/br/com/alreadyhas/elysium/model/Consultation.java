@@ -1,13 +1,8 @@
 package br.com.alreadyhas.elysium.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import br.com.alreadyhas.elysium.abstraction.IElysiumModel;
-
-public class Consultation implements IElysiumModel {
-	private Long id;
-	private String name;
+public class Consultation extends ElysiumModelAbstract {
 	private Employee employee;
 	private Patient patient;
 	private TypeConsultation typeConsultation;
@@ -15,7 +10,6 @@ public class Consultation implements IElysiumModel {
 	private Boolean attendance;
 	private String anotation;
 	private String typePayment;
-	private Date dateRegister;
 	private Date dateScheduling;
 	private Date dateReturn;
 
@@ -24,7 +18,6 @@ public class Consultation implements IElysiumModel {
 
 	public Consultation(Employee employee, Patient patient, TypeConsultation typeConsultation, Invoice invoice, Boolean attendance, String anotation,
 			String typePayment, Date dateRegister, Date dateScheduling, Date dateReturn) {
-		super();
 		this.employee = employee;
 		this.patient = patient;
 		this.typeConsultation = typeConsultation;
@@ -32,29 +25,8 @@ public class Consultation implements IElysiumModel {
 		this.attendance = attendance;
 		this.anotation = anotation;
 		this.typePayment = typePayment;
-		this.dateRegister = dateRegister;
 		this.dateScheduling = dateScheduling;
 		this.dateReturn = dateReturn;
-	}
-
-	@Override
-	public Long getId() {
-		return id;
-	}
-
-	@Override
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public Employee getEmployee() {
@@ -113,16 +85,6 @@ public class Consultation implements IElysiumModel {
 		this.typePayment = typePayment;
 	}
 
-	@Override
-	public Date getDateRegister() {
-		return dateRegister;
-	}
-
-	@Override
-	public void setDateRegister(Date dateRegister) {
-		this.dateRegister = dateRegister;
-	}
-
 	public Date getDateScheduling() {
 		return dateScheduling;
 	}
@@ -137,16 +99,5 @@ public class Consultation implements IElysiumModel {
 
 	public void setDateReturn(Date dateReturn) {
 		this.dateReturn = dateReturn;
-	}
-
-	@Override
-	public String brDateRegister() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		return dateFormat.format(dateRegister);
-	}
-
-	@Override
-	public String toString() {
-		return "| " + id + " | " + brDateRegister() + " | " + name;
 	}
 }

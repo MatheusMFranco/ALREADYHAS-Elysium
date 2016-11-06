@@ -31,7 +31,17 @@ public class TypeEmployeeDAOTest {
 			// showAllTest();
 			// updateTest();
 			// deleteTest();
+			/*
+			 * DataAccess access = DataAccess.getInstance();
+			 * System.out.println(access.getUser());
+			 * System.out.println(access.getPassword());
+			 * 
+			 * DataAccess access2 = DataAccess.getInstance();
+			 * System.out.println(access2.getUser());
+			 * System.out.println(access2.getPassword());
+			 */
 			showAllTest();
+			// TypeConsultationDAOTest.showAllTest();
 		} catch (SQLException e) {
 			console.info(ConsoleMessage.ERROR, "Make sure the query statement is spelled correctly.");
 			e.printStackTrace();

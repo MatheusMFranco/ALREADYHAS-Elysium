@@ -5,10 +5,12 @@ import java.sql.Date;
 import br.com.alreadyhas.elysium.abstraction.IConsole;
 
 public abstract class ElysiumObject {
-	final public static IConsole CONSOLE = new ConsoleFoxStyle("System");
-	final public static Date CURRENT_DAY = CONSOLE.currentDate();
-	public static String classCompleteName;
-	public static String className;
+	public static final IConsole CONSOLE = new ConsoleFoxStyle("System");
+	public static final Date CURRENT_DAY = CONSOLE.currentDate();
+	public final String BAR_SEPARATOR = " | ";
+
+	private static String classCompleteName;
+	private static String className;
 
 	public ElysiumObject() {
 		classCompleteName = this.getClass().getName();
