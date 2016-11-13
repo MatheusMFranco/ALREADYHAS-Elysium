@@ -5,18 +5,26 @@
 
 
 	<ui:define name="content">
-		<div class="w3-panel w3-white w3-round-xlarge center panel__opacity--50">
+		<div class="w3-panel w3-white w3-round-xlarge center panel__opacity--50"
+			 role="error">
+
 			<h1 class="title__error">404</h1>
 			<h2 id="title-404-error">Page Not Found</h2>
-			<p id="message-404-error">The page you tried to access does not exist or ceased to exist ... '-'</p>
-			<div class="w3-container w3-btn-group ui-widget ui-corner-all">
+
+			<p  id="message-404-error"
+				role="message_404">
+			The page you tried to access does not exist or ceased to exist ... '-'</p>
+
+			<div class="w3-container w3-btn-group ui-widget ui-corner-all"
+				 role="button_contaner">
+
 				<button id="bnt-back" 
-						class="w3-btn w3-white w3-btn-block button__unauthenticated" 
+						class="w3-btn w3-white w3-btn-block button__unauthenticated tooltip" 
 						type="button" 
 						title="Click to return to the previous page" 
 						value="return">
 						<i class="w3-xlarge fa fa-arrow-circle-left"></i>
-						Return
+						<span id="txt-back">Return</span>
 				</button>
 			</div>
 		</div>

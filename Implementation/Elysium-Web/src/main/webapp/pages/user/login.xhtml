@@ -3,79 +3,104 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-
 	<ui:define name="content">
 
 		<h1 id="title-welcome" 
-			class="title__unauthenticated">
+			class="title__unauthenticated"
+			role="welcome">
 			Welcome to Elysium!
 		</h1>
 
-		<form action="login-controller.do" method="post" class="w3-container">
+		<form 
+			action="login-controller.do" 
+			method="post" 
+			class="w3-container"
+			id="login-form" 
+			role="login">
 
-			<div class="w3-container">
+			<div 
+				class="w3-container"
+				role="user-contaner">
+
+				<div class="w3-panel message__box" id="message-box"></div>
+
 				<label 	for="username" 
 						class="w3-label w3-text-white w3-text-shadow">
-						<b id="title_username">User Name</b>
+						<b id="title-username">User Name</b>
 				</label>
 
 				<input 	id="username" 
 						name="username" 
-						class="w3-input w3-border input__unauthenticated" 
-						type="text" title="Insert your user name" 
+						class="w3-input w3-border input__unauthenticated tooltip" 
+						type="text" 
+						title="Insert your user name" 
 						placeholder="Insert your user name" 
-						maxlength="4" />
+						maxlength="4"
+						required="required"
+						aria-required="true" />
 		 	</div>
 
-			<div class="w3-container">
+			<div 
+				class="w3-container"
+				role="password-contaner">
+
 				<label 	for="password" 
 						class="w3-label w3-text-white w3-text-shadow">
-						<b id="title_password">Password</b>
+						<b id="title-password">Password</b>
 				</label>
 
 				<input 	id="password"
 						name="password"
-						class="w3-input w3-border input__unauthenticated" 
+						class="w3-input w3-border input__unauthenticated tooltip" 
 						type="password" 
 						title="Insert your password" 
 						placeholder="Insert your password"
-						maxlength="8" />
+						maxlength="8"
+						required="required"
+						aria-required="true" />
 			</div>
 
 			<br />
 
-			<div class="w3-container w3-btn-group ui-widget ui-corner-all">
+			<div class="w3-container w3-btn-group ui-widget ui-corner-all"
+				 role="button-contaner">
+
 				<button id="bnt-login" 
-						class="w3-btn w3-blue w3-btn-block button__unauthenticated" 
-						type="submit" 
+						class="w3-btn w3-blue w3-btn-block button__unauthenticated tooltip" 
+						type="submit"
 						title="Click for login" 
 						value="login">
 						<i class="w3-xlarge fa fa-arrow-circle-right"></i>
-						Login
+						<span id="txt-login">Login</span>
 				</button>
+
 				<button id="bnt-reset" 
-						class="w3-btn w3-white w3-btn-block button__unauthenticated" 
+						class="w3-btn w3-white w3-btn-block button__unauthenticated tooltip" 
 						type="reset" 
 						title="Click for reset inputs" 
 						value="reset">
 						<i class="w3-xlarge fa fa-circle-thin"></i>
-						Reset
+						<span id="txt-reset">Reset</span>
 				</button>
 			</div>
 
 			<br />
 
-			<div class="w3-container center">
+			<div class="w3-container center"
+				 role="other-links">
+
 				<a 	id="link-register"
 					href="register.xhtml"
-					class="link__unauthenticated"
+					class="link__unauthenticated tooltip"
 					title="Click for a new account">
 					<strong>Register Now!</strong>
 				</a>
+
 				<b class="separator">|</b>
+
 				<a 	id="link-forgot-password"
 					href="forgot-password.xhtml"
-					class="link__unauthenticated"
+					class="link__unauthenticated tooltip"
 					title="Click to renew your password">
 					I forgot the password...
 				</a>

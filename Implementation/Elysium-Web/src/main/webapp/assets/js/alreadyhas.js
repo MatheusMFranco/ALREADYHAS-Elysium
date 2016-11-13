@@ -1,5 +1,10 @@
+getInfoMessage("info", "Loading languages...");
+
 var text;
 var selection = navigator.language;
+
+getInfoMessage("success", "Browser language found.");
+getInfoMessage("info", "Loading english language...");
 
 var english = {	"slogan"				:	"A software for doctors.",
 
@@ -8,6 +13,11 @@ var english = {	"slogan"				:	"A software for doctors.",
 				"title_403_error"		:	"Forbidden",
 				"title_404_error"		:	"Page Not Found",
 				"title_500_error"		:	"Internal Server Error",
+
+				"option_color_normal"	: 	"Normal",
+				"option_color_positive"	: 	"Positive",
+				"option_color_negative"	: 	"Negative",
+				"option_color_reverse"	: 	"Reverse",
 
 				"username" 				: 	"User Name",
 				"password" 				: 	"Password", 
@@ -26,11 +36,13 @@ var english = {	"slogan"				:	"A software for doctors.",
 				"hint_bnt_back"			:	"Click to return to the previous page",
 				"hint_link_register"	:	"Click to a new account",
 				"hint_link_forgot_psw" 	: 	"Click to renew your password",
+				"hint_language" 		: 	"Select your language",
 
 				"message_403_error"		:	"WHAT?! You are trying to access a page that was not? Ask permission to the support team or your supervisor to have access to this page. :P",
 				"message_404_error"		:	"The page you tried to access does not exist or ceased to exist ... '_'",
 				"message_500_error"		:	"Did something happen on the server... =/",
 				};
+getInfoMessage("info", "Loading portuguese language...");
 
 var portugues ={"slogan"				:	"Um software para médicos.",
 
@@ -39,6 +51,11 @@ var portugues ={"slogan"				:	"Um software para médicos.",
 				"title_403_error"		:	"Proibido",
 				"title_404_error"		:	"Página Não Encontrada",
 				"title_500_error"		:	"Erro Interno no Servidor",
+
+				"option_color_normal"	: 	"Normal",
+				"option_color_positive"	: 	"Positivo",
+				"option_color_negative"	: 	"Negativo",
+				"option_color_reverse"	: 	"Reverso",
 
 				"username" 				: 	"Usuário",
 				"password" 				: 	"Senha", 
@@ -57,11 +74,14 @@ var portugues ={"slogan"				:	"Um software para médicos.",
 				"hint_bnt_back"			:	"Clique aqui para retornar a página anterior",
 				"hint_link_register"	:	"Clique aqui para uma nova conta",
 				"hint_link_forgot_psw" 	: 	"Clique aqui para renovar a sua senha",
+				"hint_language" 		: 	"Selecione o seu idioma",
 
 				"message_403_error"		:	"O QUE?! Você está tentando acessar uma página que não devia? Peça autorização para a equipe de suporte ou ao seu supervisor para que tenha acesso a esta página. :P",
 				"message_404_error"		:	"A página que você está tentando acessar não existe ou parou de existir... '_'",
 				"message_500_error"		:	"Aconteceu alguma coisa no servidor... =/",
 				};
+
+getInfoMessage("info", "Loading espanish language...");
 
 var espanol ={	"slogan"				:	"Un software para los médicos.",
 
@@ -70,6 +90,11 @@ var espanol ={	"slogan"				:	"Un software para los médicos.",
 				"title_403_error"		:	"Prohibido",
 				"title_404_error"		:	"Página No Encontrada",
 				"title_500_error"		:	"Error Interno del Servidor",
+
+				"option_color_normal"	: 	"Normal",
+				"option_color_positive"	: 	"Positivo",
+				"option_color_negative"	: 	"Negativo",
+				"option_color_reverse"	: 	"Reverso",
 
 				"username" 				: 	"Usuario",
 				"password" 				: 	"Contraseña", 
@@ -88,6 +113,7 @@ var espanol ={	"slogan"				:	"Un software para los médicos.",
 				"hint_bnt_back"			:	"Clic aquí para retornar a la página anterior",
 				"hint_link_register"	:	"Clic aquí para una nueva cuenta",
 				"hint_link_forgot_psw" 	: 	"Clic aquí para renovar su contraseña",
+				"hint_language" 		: 	"Seleccione su idioma",
 		
 				"message_403_error"		:	"¡¿QUÉ?! Usted está intentando acceder a una página que no era? Pedir permiso al equipo de soporte o su supervisor para tener acceso a esta página. :P",
 				"message_404_error"		:	"La página que está intentando acceder no existe o ha dejado de existir ...'_'",
@@ -113,16 +139,19 @@ function changeLanguage(form){
 	switch(form){
     case "pt-BR":{
     	text = portugues;
+    	textLanguageChanged("Portuguese");
     	break;
     } 
 
     case "es":{
     	text = espanol;
+    	textLanguageChanged("Spanish");
     	break;
      }
 
     case "en": default:{
     	text = english;
+    	textLanguageChanged("English");
     }
   }
 
@@ -142,9 +171,9 @@ function setTextLanguageInPages(){
 	$("#title_username")		.text(text.username); 				
 	$("#title_password")		.text(text.password); 				
 
-	$("#bnt-login")				.text(text.bnt_login);				
-	$("#bnt-reset")				.text(text.bnt_reset);				
-	$("#bnt-back")				.text(text.bnt_back);			
+	$("#txt-login")				.text(text.bnt_login);				
+	$("#txt-reset")				.text(text.bnt_reset);				
+	$("#txt-back")				.text(text.bnt_back);			
 
 	$("#link-register")			.text(text.link_register);			
 	$("#link-forgot-password")	.text(text.link_forgot_password);
@@ -162,7 +191,8 @@ function setTextLanguageInPages(){
 	$("#bnt-back")				.attr("title", text.hint_bnt_back);		
 
 	$("#link-register")			.attr("title", text.hint_link_register);	
-	$("#link-forgot-password")	.attr("title", text.hint_link_forgot_psw);	
+	$("#link-forgot-password")	.attr("title", text.hint_link_forgot_psw);
+	$("#change-language")		.attr("title", text.hint_language);
 
 	//Placeholder
 	$("#username").attr("placeholder", text.hint_username);			
@@ -176,5 +206,9 @@ $("#change-language").change(function(){
   });
 
   changeLanguage(selection);
- 
+  location.reload();
 });
+
+function textLanguageChanged(language){
+	getInfoMessage("info", "The language of the page has been changed to " + language + ".");
+}

@@ -6,10 +6,11 @@
 	cursor: pointer;	
 }
 .panel__opacity--50{
-	opacity: 0.5;
+	opacity: .5;
 }
 .separator{
 	margin: 1em;
+	margin: 1rem;
 }
 
 /* Unauthenticated Template */
@@ -39,5 +40,33 @@
 .link__unauthenticated:hover,
 .button__unauthenticated:hover,
 .input__unauthenticated:focus{
-	opacity: 0.7;
+	opacity: .7;
+}
+
+.button__unauthenticated--disable,
+.button__unauthenticated--disable:hover{
+	opacity: .5;
+	cursor: not-allowed;
+}
+
+.emag__select{
+	margin: 1em;
+	margin: 1rem;
+}
+
+/*Messages*/
+.message__box{
+	opacity: .9;
+	font-size: 100%;
+	height: auto;	
+}
+.icon__close{
+	padding: .2em;
+	padding: .2rem;
+}
+.label__unauthenticated--error{
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #ff0000;
+	background-color: #fff;
 }

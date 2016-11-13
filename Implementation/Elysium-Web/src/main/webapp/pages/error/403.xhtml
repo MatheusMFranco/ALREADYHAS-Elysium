@@ -5,21 +5,29 @@
 
 
 	<ui:define name="content">
-		<div class="w3-panel w3-white w3-round-xlarge center panel__opacity--50">
+		<div class="w3-panel w3-white w3-round-xlarge center panel__opacity--50"
+			 role="error">
+
 			<h1 class="title__error">403</h1>
 			<h2 id="title-403-error">Forbidden</h2>
-			<p id="message-403-error">WHAT?!
+
+			<p 	id="message-403-error"
+				role="message_403">
+				WHAT?!
 			 	You are trying to access a page that was not? 
 			 	Ask permission to the support team or your supervisor to have access to this page.
 			</p>
-			<div class="w3-container w3-btn-group ui-widget ui-corner-all">
+
+			<div class="w3-container w3-btn-group ui-widget ui-corner-all"
+				 role="button_contaner">
+
 				<button id="bnt-back" 
-						class="w3-btn w3-white w3-btn-block button__unauthenticated" 
+						class="w3-btn w3-white w3-btn-block button__unauthenticated tooltip" 
 						type="button" 
 						title="Click to return to the previous page" 
 						value="return">
 						<i class="w3-xlarge fa fa-arrow-circle-left"></i>
-						Return
+						<span id="txt-back">Return</span>
 				</button>
 			</div>
 		</div>

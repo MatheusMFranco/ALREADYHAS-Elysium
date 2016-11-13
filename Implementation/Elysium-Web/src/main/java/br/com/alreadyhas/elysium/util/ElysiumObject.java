@@ -7,7 +7,7 @@ import br.com.alreadyhas.elysium.abstraction.IConsole;
 public abstract class ElysiumObject {
 	public static final IConsole CONSOLE = new ConsoleFoxStyle("System");
 	public static final Date CURRENT_DAY = CONSOLE.currentDate();
-	public final String BAR_SEPARATOR = " | ";
+	public static final String BAR_SEPARATOR = " | ";
 
 	private static String classCompleteName;
 	private static String className;
