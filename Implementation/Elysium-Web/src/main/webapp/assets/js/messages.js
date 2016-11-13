@@ -1,28 +1,8 @@
-var INFO_MESSAGE 		= "[INFO] ";
-var ERROR_MESSAGE 		= "[ERROR] ";
-var WARNING_MESSAGE 	= "[WARN] ";
-var SUCCESS_MESSAGE 	= "[SUCCESS] ";
-var UNDEFINED_MESSAGE 	= "[???] ";
-
-function getInfoMessage(type, message){
-	console.log(checkTypeMessage(type) + message);
-}
-
-function checkTypeMessage(type){
-	switch(type){
-		case "error"	:return ERROR_MESSAGE;
-		case "info"		:return INFO_MESSAGE;
-		case "warn"		:return WARNING_MESSAGE;
-		case "success"	:return SUCCESS_MESSAGE;
-		default 		:return UNDEFINED_MESSAGE; 
-	}
-}
-
-var ERROR 	= new Array();
-ERROR[0] 	= "Fill in the required fields.";
-ERROR[1] 	= "The username have 4 characters.";
-ERROR[2] 	= "The password have 8 characters.";
 var messageBoxExists = false;
+var ERROR 	= new Array();
+ERROR[0] 	= text.form_error_0;
+ERROR[1] 	= text.form_error_1;
+ERROR[2] 	= text.form_error_2;
 
 $(function (){
 	$("#username").val(null);
@@ -117,6 +97,8 @@ function getErrorMessage(type, message){
 function getMessage(){
 	if(messageBoxExists == false){
 		$("#message-box").append(getMessageContent());
+		$("#close-message-box").attr("title", text.hint_bnt_close);
+
 		$("#close-message-box").click(function closeMessage(){
 			$("#message-box").hide();
 		});
@@ -125,7 +107,7 @@ function getMessage(){
 }
 
 function getCloseIcon(){
-	return "<i id='close-message-box' class='w3-closebtn fa fa-times icon__close'></i>";
+	return "<i id='close-message-box' class='w3-closebtn fa fa-times icon__close' title='Click to close message'></i>";
 }
 
 function getIconMessage(){
