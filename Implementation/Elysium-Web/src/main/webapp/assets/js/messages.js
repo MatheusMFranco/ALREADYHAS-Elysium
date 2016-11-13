@@ -19,10 +19,40 @@ $("#bnt-login").click(function validateLogin(){
 	return false;
 });
 
+$("#username").keydown(function regex(keyPressed) {
+	if (validateNumbers(keyPressed)
+		|| validateWord(keyPressed) 
+		|| validateDiretionalComands(keyPressed)
+		|| validateReturnComands(keyPressed)
+		){
+		return true;
+	}else{
+		return false;
+  }
+});
+
+function validateNumbers(keyPressed){
+	return (keyPressed.keyCode >= 48 && keyPressed.keyCode <= 57) ? true : false;
+}
+
+function validateWord(keyPressed){
+	return (keyPressed.keyCode >= 65 && keyPressed.keyCode <= 90) ? true : false;
+}
+
+function validateDiretionalComands(keyPressed){
+	return (keyPressed.keyCode >= 37 && keyPressed.keyCode <= 40) ? true : false;
+}
+
+function validateReturnComands(keyPressed){
+	return (keyPressed.keyCode == 16 || keyPressed.keyCode == 9 || keyPressed.keyCode == 8) ? true : false;
+}
+
 $("#username").keyup( function enterUser(){
 	var userField 		= $("#username").val();
 	var passwordField 	= $("#password").val();
-	
+
+	$("#username").addClass("input__unauthenticated--upper");
+
 	if(!validadeaAllFieldsLoginRequired(userField, passwordField))
 		locked();
 });

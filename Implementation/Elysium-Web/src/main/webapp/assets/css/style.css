@@ -5,9 +5,19 @@
 .dropdown{
 	cursor: pointer;	
 }
-.panel__opacity--50{
-	opacity: .5;
-}
+
+.panel__padding--5{padding: .5em; padding: .5rem;}
+.panel__opacity--10{opacity: .1;}
+.panel__opacity--20{opacity: .2;}
+.panel__opacity--30{opacity: .3;}
+.panel__opacity--40{opacity: .4;}
+.panel__opacity--50{opacity: .5;}
+.panel__opacity--60{opacity: .6;}
+.panel__opacity--70{opacity: .7;}
+.panel__opacity--80{opacity: .8;}
+.panel__opacity--90{opacity: .9;}
+.panel__opacity--100{opacity: 1;}
+
 .separator{
 	margin: 1em;
 	margin: 1rem;
@@ -42,6 +52,7 @@
 .input__unauthenticated:focus{
 	opacity: .7;
 }
+.input__unauthenticated--upper{text-transform: uppercase;}
 
 .button__unauthenticated--disable,
 .button__unauthenticated--disable:hover{
