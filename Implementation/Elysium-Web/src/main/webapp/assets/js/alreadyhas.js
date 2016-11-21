@@ -45,9 +45,10 @@ var english = {	"slogan"				:	"A software for doctors.",
 				"message_500_error"		:	"Did something happen on the server... =/",
 
 				"form_error_0"			:	"Fill in the required fields.",
-				"form_error_1"			:	"The username have 4 characters.",
-				"form_error_2"			:	"The password have 8 characters."
+				"form_error_1"			:	"The username have 4 characters (letters and/or numbers).",
+				"form_error_3"			:	"Enter letters and/or numbers."
 				};
+
 getInfoMessage("info", "Loading portuguese language...");
 
 var portugues ={"slogan"				:	"Um software para médicos.",
@@ -89,7 +90,7 @@ var portugues ={"slogan"				:	"Um software para médicos.",
 				"message_500_error"		:	"Aconteceu alguma coisa no servidor... =/",
 
 				"form_error_0"			:	"Preencha os campos obrigatórios.",
-				"form_error_1"			:	"O usuário deve ter 4 dígitos.",
+				"form_error_1"			:	"O usuário deve ter 4 dígitos (letras e/ou números).",
 				"form_error_2"			:	"A senha deve ter 8 dígitos."
 				};
 
@@ -134,11 +135,14 @@ var espanol ={	"slogan"				:	"Un software para los médicos.",
 				"message_500_error"		:	"Pasó algo en el servidor... = /",
 
 				"form_error_0"			:	"Rellene los campos obligatorios.",
-				"form_error_1"			:	"El usuario debe tener 4 dígitos.",
+				"form_error_1"			:	"El usuario debe tener 4 dígitos (letras y/o números).",
 				"form_error_2"			:	"La contraseña debe tener 8 dígitos."
 				};
 
+getInfoMessage("success", "Languages loaded.");
+
 getDefaultLanguage();
+getDefaultTheme();
 
 function getDefaultLanguage(){
 	if(localStorage.getItem("language") == "undefined") {
@@ -236,4 +240,61 @@ $("#change-language").change(function(){
 
 function textLanguageChanged(language){
 	getInfoMessage("info", "The language of the page has been changed to " + language + ".");
+}
+
+
+$("#change-color").change(function(){
+
+  $("#change-color option:selected").each(function () {
+    selection = $(this).attr("id");
+  });
+
+  changeColor(selection);
+  location.reload();
+});
+
+
+function changeColor(form){
+
+	$("#" + form).attr("selected", "selected");
+	
+	localStorage.setItem("theme", form);
+	var theme = localStorage.getItem("theme");
+	var DEFAULT_THEME = $("#color-theme").attr("href");
+
+	switch(form){
+		case "color-reverse":{
+			theme = "reverse";
+			break;
+		} 
+
+		case "color-positive":{
+			theme = "positive";
+			break;
+		}
+		
+		case "color-negative":{
+			theme = "negative";
+			break;
+		}
+		
+		case "color-normal": default:{
+			theme = "normal";
+		}
+	}
+
+	themeColorChanged(form.substring(6));
+	$("#color-theme").attr("href", DEFAULT_THEME.replace("color", theme));
+}
+
+function getDefaultTheme(){
+	if(localStorage.getItem("theme") == "undefined") {
+		localStorage.setItem("theme", "normal");
+	}
+
+	changeColor(localStorage.getItem("theme"));
+}
+
+function themeColorChanged(theme){
+	getInfoMessage("info", "The theme of the page has been changed to " + theme + ".");
 }

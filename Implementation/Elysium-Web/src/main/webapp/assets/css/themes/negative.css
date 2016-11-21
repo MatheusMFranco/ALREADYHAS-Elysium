@@ -1,0 +1,83 @@
+.bgimg-1 {
+    background-image: url('../../img/bg/tree-moon-negative.png');
+}
+
+header,
+footer,
+b{
+	color: #000;
+	text-shadow: none;
+}
+
+input,
+select,
+.label__unauthenticated--error,
+.w3-btn,
+.message__box,
+.message__error{
+	color: #fff;
+	background-color: #000;
+}
+
+.w3-white{
+	background-color: #000 !important;
+	color: #fff !important;
+}
+
+.w3-black{
+	background-color: #fff !important;
+	color: #000 !important;
+}
+
+.w3-round-xlarge{
+	color: #000;
+	background-color: #fff;
+}
+
+.w3-round-xlarge{
+	border: #000 1px solid;
+}
+
+.w3-btn,
+.message-box{
+	border: #fff 1px solid;
+}
+
+.tooltipster-box,
+.panel__opacity--10,
+.panel__opacity--20,
+.panel__opacity--30,
+.panel__opacity--40,
+.panel__opacity--50,
+.panel__opacity--60,
+.panel__opacity--70,
+.panel__opacity--80,
+.panel__opacity--90,
+.panel__opacity--100,
+.link__unauthenticated:hover,
+.button__unauthenticated:hover,
+.input__unauthenticated:focus,
+.button__unauthenticated--disable,
+.button__unauthenticated--disable:hover,
+.message__box{
+	opacity: 1;
+}
+
+.tooltipster-sidetip .tooltipster-box {
+	background:#000;
+}
+.tooltipster-sidetip .tooltipster-content {
+	color:#fff;
+}
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background{
+	border-bottom-color:#000;
+}
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background{
+	border-left-color:#000;
+}
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background{
+	border-right-color:#000;
+}
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+	border-top-color:#000;
+}

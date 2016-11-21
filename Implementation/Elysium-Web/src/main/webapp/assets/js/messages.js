@@ -7,26 +7,31 @@ ERROR[2] 	= text.form_error_2;
 $(function (){
 	$("#username").val(null);
 	$("#password").val(null);
-	locked();
+	lockedLoginButton();
 });
 
 $("#bnt-login").click(function validateLogin(){
 	var userField 		= $("#username").val();
 	var passwordField 	= $("#password").val();
-
+	getInfoMessage("info", "Log button was triggered.");
+	
 	if(validadeaAllFieldsLoginRequired(userField, passwordField))
 		return true;
 	return false;
 });
 
 $("#username").keydown(function regex(keyPressed) {
+	getInfoMessage("info", "Key pressed in the username field.");
 	if (validateNumbers(keyPressed)
 		|| validateWord(keyPressed) 
 		|| validateDiretionalComands(keyPressed)
 		|| validateReturnComands(keyPressed)
 		){
+		notAriaInvalid("username");
+		getInfoMessage("info", "Keys released.");
 		return true;
 	}else{
+		getInfoMessage("info", "Keys locked informed.");
 		return false;
   }
 });
@@ -54,18 +59,19 @@ $("#username").keyup( function enterUser(){
 	$("#username").addClass("input__unauthenticated--upper");
 
 	if(!validadeaAllFieldsLoginRequired(userField, passwordField))
-		locked();
+		lockedLoginButton();
 });
 
 $("#password").keyup( function enterPassword(){
 	var userField 		= $("#username").val();
 	var passwordField 	= $("#password").val();
+	getInfoMessage("info", "Key pressed in the password field.");
 
 	if(!validadeaAllFieldsLoginRequired(userField, passwordField))
-		locked();
+		lockedLoginButton();
 });
 
-function locked(){
+function lockedLoginButton(){
 	$("#bnt-login").attr("disable", "disable");
 	$("#bnt-login").attr("title", ERROR[0]);
 	$("#bnt-login").addClass("button__unauthenticated--disable");
@@ -80,6 +86,7 @@ function unlockLoginButton(){
 
 function validadeaAllFieldsLoginRequired(user, password){
 	if(validateUser(user) && validatePassword(password)){
+		getInfoMessage("info", "Ready to login.");
 		unlockLoginButton();
 		return true;
 	}
@@ -89,11 +96,15 @@ function validadeaAllFieldsLoginRequired(user, password){
 function validateUser(field){
 	if(field.length < 4){
 		$("#title-username").addClass("label__unauthenticated--error");
-		getErrorMessage("error", ERROR[1]);
+
+		getErrorMessage(ERROR[1]);
+		ariaInvalid("username", ERROR[1]);
+
 		validateFieldNull(field);
 		return false;
 	}else{
 		$("#title-username").removeClass("label__unauthenticated--error");
+		notAriaInvalid("username");
 		return true;
 	}
 }
@@ -101,27 +112,43 @@ function validateUser(field){
 function validatePassword(field){
 	if(field.length < 8){
 		$("#title-password").addClass("label__unauthenticated--error");
-		getErrorMessage("error", ERROR[2]);
+
+		getErrorMessage(ERROR[2]);
+		ariaInvalid("password", ERROR[2]);
+
 		validateFieldNull(field);
 		return false;
 	}else{
 		$("#title-password").removeClass("label__unauthenticated--error");
+		notAriaInvalid("password");
 		return true;
 	}
 }
 
 function validateFieldNull(field){
 	if(field.length <= 0){
-		getErrorMessage("error", ERROR[0]);
+		getErrorMessage(ERROR[0]);
+		ariaInvalid("username", ERROR[0]);
+		ariaInvalid("password", ERROR[0]);
 	}
 }
 
-function getErrorMessage(type, message){
+function ariaInvalid(id, message){
+	$("#" + id).attr("aria-describedby", message);
+	$("#" + id).attr("aria-invalid", "true");
+}
+
+function notAriaInvalid(id){
+	$("#" + id).attr("aria-describedby", "");
+	$("#" + id).attr("aria-invalid", "false");
+}
+
+function getErrorMessage(message){
 	getMessage();
 	$("#message-icon").addClass("fa fa-times-circle");
 	$("#message-box").addClass("w3-red message__error").show();
 	$("#message-text").text(message);
-	getInfoMessage(type, message);
+	getInfoMessage("error", message);
 }
 
 function getMessage(){

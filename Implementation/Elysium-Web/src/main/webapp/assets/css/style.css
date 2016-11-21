@@ -78,6 +78,4 @@
 .label__unauthenticated--error{
 	text-transform: uppercase;
 	font-weight: bold;
-	color: #ff0000;
-	background-color: #fff;
 }

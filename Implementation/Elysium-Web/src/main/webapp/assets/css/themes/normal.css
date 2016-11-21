@@ -1,0 +1,8 @@
+.bgimg-1 {
+    background-image: url('../../img/bg/tree-moon.jpg');
+}
+
+.label__unauthenticated--error{
+	color: #ff0000;
+	background-color: #fff;
+}
